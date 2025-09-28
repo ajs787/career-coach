@@ -63,7 +63,7 @@ export default function LandingPage() {
             Career Reality Coach
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            Stop romanticizing careers. Get brutally honest answers about what it's 
+            Stop romanticizing careers. Get brutally honest answers about what it&apos;s 
             <em className="text-teal-600 font-semibold"> actually like</em> to work in your dream job.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { AlertTriangle, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
-export default function AuthErrorPage() {
+function AuthErrorContent() {
   const searchParams = useSearchParams()
   const error = searchParams.get('error')
 
@@ -41,7 +42,7 @@ export default function AuthErrorPage() {
           <CardContent className="space-y-6">
             <div className="text-center">
               <p className="text-slate-600 mb-6">
-                We're sorry, but something went wrong during the sign-in process. 
+                We&apos;re sorry, but something went wrong during the sign-in process. 
                 This could be due to a temporary issue or an invalid link.
               </p>
               
@@ -72,5 +73,13 @@ export default function AuthErrorPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function AuthErrorPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthErrorContent />
+    </Suspense>
   )
 }
